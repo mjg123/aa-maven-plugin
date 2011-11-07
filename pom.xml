@@ -3,7 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.mjg123</groupId>
-	<artifactId>maven-aa-plugin</artifactId>
+	<artifactId>aa-maven-plugin</artifactId>
 
 	<packaging>maven-plugin</packaging>
 	<version>0.0.1-SNAPSHOT</version>
@@ -39,6 +39,16 @@
 					</execution>
 				</executions>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-plugin-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<skipDescriptor>true</skipDescriptor>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 
