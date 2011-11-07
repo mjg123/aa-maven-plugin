@@ -9,7 +9,7 @@
 	<mojos>
 		<mojo>
 			<goal>beautify</goal>
-			<description>Beautifies yr build.</description>
+			<description>Beautifies yr build</description>
 			<requiresDirectInvocation>false</requiresDirectInvocation>
 			<requiresProject>true</requiresProject>
 			<requiresReports>false</requiresReports>
@@ -17,14 +17,11 @@
 			<requiresOnline>false</requiresOnline>
 			<inheritedByDefault>true</inheritedByDefault>
 			<phase>validate</phase>
-
 			<implementation>mvn_aa_plugin.mojo</implementation>
-
 			<language>java</language>
 			<instantiationStrategy>per-lookup</instantiationStrategy>
 			<executionStrategy>once-per-session</executionStrategy>
 			<parameters>
-
 				<parameter>
 					<name>message</name>
 					<type>java.lang.String</type>
@@ -32,7 +29,6 @@
 					<editable>true</editable>
 					<description>Message to show</description>
 				</parameter>
-				
 				<parameter>
 					<name>show-file</name>
 					<type>java.lang.String</type>
@@ -40,12 +36,7 @@
 					<editable>true</editable>
 					<description>Location of the file</description>
 				</parameter>
-				
 			</parameters>
-			
-			<configuration>
-				<!-- <outputDirectory implementation="java.io.File">${project.build.directory}</outputDirectory> -->
-			</configuration>
 		</mojo>
 	</mojos>
 	<dependencies>
@@ -59,6 +50,11 @@
 			<groupId>org.clojure</groupId>
 			<artifactId>clojure</artifactId>
 			<version>1.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
 		</dependency>
 	</dependencies>
 </plugin>

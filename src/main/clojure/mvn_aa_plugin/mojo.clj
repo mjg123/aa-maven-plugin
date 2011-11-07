@@ -9,7 +9,7 @@
 
 (def params (atom {:message "ascii-art maven plugin" :show-file :not-set}))
 
-(defn mojo-setMessage  [this name] (swap! params assoc :message name))
+(defn mojo-setMessage  [this name] (swap! params assoc :message   name))
 (defn mojo-setShowFile [this name] (swap! params assoc :show-file name))
 
 
@@ -18,9 +18,6 @@
 
 
 (defn mojo-execute [this]
-
   (let [ascii (aa/get-ascii-art this (@params :show-file))
         msg   (@params :message)]
-
-    (info this 
-   	  (str "\n" ascii "\n\n    " msg "\n"))))
+    (info this (str "\n" (aa/merge-art ascii msg) "\n"))))
