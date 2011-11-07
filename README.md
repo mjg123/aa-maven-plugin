@@ -41,6 +41,7 @@ that ought to do it.
 
 ### Success
 
+```
                              \
                               \
                                \\
@@ -64,9 +65,11 @@ that ought to do it.
  this could be the                   ,.-' >.'
  start of a                         <.'_.''
  beautiful build                      <'
+```
 
 ### Failure
 
+```
 [ERROR] 
 
       _,-''`''-~`)
@@ -89,4 +92,4 @@ that ought to do it.
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-
+```
