@@ -18,6 +18,10 @@
 
 
 (defn mojo-execute [this]
-  (let [ascii (aa/get-ascii-art this (@params :show-file))
-        msg   (@params :message)]
-    (info this (str "\n" (aa/merge-art ascii msg) "\n"))))
+  (try
+    (let [ascii (aa/get-ascii-art (@params :show-file))
+          msg   (@params :message)]
+      (info this (str "\n" (aa/merge-art ascii msg) "\n")))
+    (catch java.io.FileNotFoundException e
+      (.error (.getLog this) aa/error-message) 
+      (throw (org.apache.maven.plugin.MojoExecutionException. "arrrgh" e)))))

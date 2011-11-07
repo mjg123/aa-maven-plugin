@@ -52,19 +52,15 @@
 
 
 
-(defn get-ascii-art [this file]
- 
-  (try
-    (if (= file :not-set)
-      default-message
-      (slurp file))
+(defn get-ascii-art [file]
+  (if (= file :not-set)
+    default-message
+    (slurp file)))
       
-    (catch java.io.FileNotFoundException e
-      (.error (.getLog this) error-message) 
-      (throw (org.apache.maven.plugin.MojoExecutionException. "arrrgh" e)))))
 
 (defn- wrap [msg]
   (WordUtils/wrap msg 18))
+  
   
 (defn merge-art [ascii msg]
   (let [ascii-lines (count (split-lines ascii))
