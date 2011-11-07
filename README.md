@@ -37,7 +37,7 @@ playing with java interop to write a maven plugin in clojure
 	</build>
 ```
 
-that ought to do it.
+that ought to do it, though it's not in maven central or anything so it'd need to be `mvn install`'d.
 
 ### Success
 
