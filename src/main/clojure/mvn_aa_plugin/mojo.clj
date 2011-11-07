@@ -1,20 +1,26 @@
 (ns mvn-aa-plugin.mojo
-
+  (:require [mvn-aa-plugin.aa :as aa])
   (:gen-class 
   		:name    "mvn_aa_plugin.mojo" 
   		:extends "org.apache.maven.plugin.AbstractMojo"
   		:prefix  "mojo-"
-  		:methods [[setMessage [String] void]])
+  		:methods [[setMessage  [String] void]
+  		          [setShowFile [String] void]]))
 
-  (:require [mvn-aa-plugin.aa :as aa]))
+(def params (atom {:message "ascii-art maven plugin" :show-file :not-set}))
 
-(def params (atom {:message "ascii-art maven plugin"}))
+(defn mojo-setMessage  [this name] (swap! params assoc :message name))
+(defn mojo-setShowFile [this name] (swap! params assoc :show-file name))
+
 
 (defn- info [this msg]
   (.info (.getLog this) msg))
 
-(defn mojo-setMessage [this name]
-  (swap! params assoc :message name))
 
 (defn mojo-execute [this]
-  (info this (str aa/default-message "\n\n    " (@params :message) "\n")))
+
+  (let [ascii (aa/get-ascii-art this (@params :show-file))
+        msg   (@params :message)]
+
+    (info this 
+   	  (str "\n" ascii "\n\n    " msg "\n"))))
