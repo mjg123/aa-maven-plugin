@@ -18,16 +18,22 @@
 			<inheritedByDefault>true</inheritedByDefault>
 			<phase>validate</phase>
 
-			 <implementation>mvn_aa_plugin.mojo</implementation>
+			<implementation>mvn_aa_plugin.mojo</implementation>
 
 			<language>java</language>
 			<instantiationStrategy>per-lookup</instantiationStrategy>
 			<executionStrategy>once-per-session</executionStrategy>
 			<parameters>
-				<!-- <parameter> <name>outputDirectory</name> <type>java.io.File</type> 
-					<required>true</required> <editable>true</editable> <description>Location 
-					of the file.</description> </parameter> -->
+
+				<parameter>
+					<name>message</name>
+					<type>java.lang.String</type>
+					<required>false</required>
+					<editable>true</editable>
+					<description>Location of the file.</description>
+				</parameter>
 			</parameters>
+			
 			<configuration>
 				<!-- <outputDirectory implementation="java.io.File">${project.build.directory}</outputDirectory> -->
 			</configuration>
