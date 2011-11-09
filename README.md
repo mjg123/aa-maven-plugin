@@ -39,13 +39,14 @@ playing with java interop to write a maven plugin in clojure
 
 that ought to do it, though it's not in maven central or anything so you need this too:
 
-<pluginRepositories>
-    <pluginRepository>
-        <id>mjg-repo</id>
-        <url>https://raw.github.com/mjg123/mjg-repo/master/repo</url>
-    </pluginRepository>
-</pluginRepositories>
-
+```xml
+	<pluginRepositories>
+	    <pluginRepository>
+	        <id>mjg-repo</id>
+	        <url>https://raw.github.com/mjg123/mjg-repo/master/repo</url>
+	    </pluginRepository>
+	</pluginRepositories>
+```
 
 ### Success
 
