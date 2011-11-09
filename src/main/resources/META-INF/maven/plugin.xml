@@ -2,7 +2,11 @@
 	<description>AA maven plugin</description>
 	<groupId>com.github.mjg123</groupId>
 	<artifactId>aa-maven-plugin</artifactId>
+<<<<<<< HEAD
 	<version>0.0.1</version>
+=======
+	<version>${project.version}</version>
+>>>>>>> 8a865091749e6149eebff5a8adefde78635a0595
 	<goalPrefix>aa</goalPrefix>
 	<isolatedRealm>false</isolatedRealm>
 	<inheritedByDefault>true</inheritedByDefault>
