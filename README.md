@@ -14,7 +14,7 @@ playing with java interop to write a maven plugin in clojure
 			<plugin>
 				<groupId>com.github.mjg123</groupId>
 				<artifactId>aa-maven-plugin</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>0.0.2</version>
 				<executions>
 					<execution>
 						<phase>validate</phase>
